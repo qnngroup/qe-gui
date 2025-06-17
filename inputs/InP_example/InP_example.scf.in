@@ -1,0 +1,40 @@
+ &control
+    calculation = 'scf'
+    prefix = 'InP_example'
+    outdir = './tmp/InP_example'
+    pseudo_dir = './pseudo'
+    verbosity = 'low'
+    wf_collect = .true.
+    disk_io = 'hdf5'
+ /
+
+ &system
+    ibrav = 2
+    nat = 2
+    ntyp = 2
+    ecutwfc = 50
+    ecutrho = 400
+    occupations = 'fixed'
+    force_symmorphic = .true.
+    nbnd = 30
+    nspin = 1
+    input_dft = 'PBE'
+    celldm(1) = 11.090429
+ /
+
+ &electrons
+    conv_thr = 1.0e-8
+    mixing_beta = 0.7
+    electron_maxstep = 100
+ /
+
+ATOMIC_SPECIES
+In 114.818 In_ONCV_PBE-1.1.upf
+P 30.974 P_ONCV_PBE-1.1.upf
+
+ATOMIC_POSITIONS crystal
+In 0 0 0
+P  .25 .25 .25
+
+K_POINTS automatic
+12 12 12 0 0 0
